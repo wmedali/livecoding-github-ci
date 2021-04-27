@@ -1,0 +1,21 @@
+language: node_js
+
+node_js: 
+  - "14.16.1"
+
+addons:
+  apt:
+    packages:
+    - libgconf-2-4
+
+install: 
+  - npm ci
+
+before_script: 
+  - node --version
+  - npm --version
+  
+script:
+  - npm run cy:verify
+  - npm run cy:info
+  - npm run cy:run
